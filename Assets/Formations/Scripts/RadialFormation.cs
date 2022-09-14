@@ -27,7 +27,7 @@ public class RadialFormation : FormationBase {
 
                 pos += GetNoise(pos);
 
-                pos *= Spread;
+                pos *= spread;
 
                 yield return pos;
             }

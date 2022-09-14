@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stickman
   - Enemy
+  - Collectible
   layers:
   - Default
   - TransparentFX

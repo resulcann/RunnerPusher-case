@@ -867,6 +867,7 @@ GameObject:
   - component: {fileID: 1717979806626423132}
   - component: {fileID: 4493189844205332136}
   - component: {fileID: 5962869453805402018}
+  - component: {fileID: 6108652077283416486}
   m_Layer: 6
   m_Name: Character
   m_TagString: Stickman
@@ -919,11 +920,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5917083276473682386}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.42962694, y: 1.3895383, z: 1}
-  m_Center: {x: 0.001839906, y: 0.6952257, z: 0}
+  m_Size: {x: 0.42962694, y: 1.3895383, z: 0.45700312}
+  m_Center: {x: 0.001839906, y: 0.6952257, z: -0.0068063736}
 --- !u!54 &5962869453805402018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -940,6 +941,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6108652077283416486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917083276473682386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b809f88aa203146bb8c61592eb11fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6684459266847946437
 GameObject:
   m_ObjectHideFlags: 0
