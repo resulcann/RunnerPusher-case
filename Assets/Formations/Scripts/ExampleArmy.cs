@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Formations.Scripts
 {
@@ -18,15 +19,17 @@ namespace Formations.Scripts
         [SerializeField] private GameObject unitPrefab;
         [SerializeField] private float unitSpeed = 2;
         [SerializeField] private float snakeMoveSpeed = 20;
+        private Vector3 _velocity = Vector3.zero;
     
 
         private readonly List<GameObject> _spawnedUnits = new List<GameObject>();
         private List<Vector3> _points = new List<Vector3>();
-        private Transform _units;
+        private Transform _units, _rootUnits;
 
-        private void Awake() {
+        private void Awake()
+        {
             _units = new GameObject("Units").transform;
-            _units.parent = transform;
+            _units.parent = transform.parent;
         }
 
         private void Update() 
@@ -44,12 +47,21 @@ namespace Formations.Scripts
             else if (_points.Count < _spawnedUnits.Count) {
                 Kill(_spawnedUnits.Count - _points.Count);
             }
-        
-            if (_spawnedUnits.Count > 3)
+
+            for (var i = 0; i < _spawnedUnits.Count; i++)
             {
-                for (var i = 3; i < _spawnedUnits.Count; i++) {
-                    //_spawnedUnits[i].transform.position = Vector3.MoveTowards(_spawnedUnits[i].transform.position, transform.position + _points[i], _unitSpeed * Time.deltaTime);
-                    _spawnedUnits[i].transform.position = new Vector3(Mathf.Lerp(_spawnedUnits[i].transform.position.x, _spawnedUnits[i-3].transform.position.x,Time.deltaTime * snakeMoveSpeed),
+                if (i < BoxFormation.Instance.unitWidth)
+                {
+                    _spawnedUnits[i].transform.position = new Vector3(
+                        Mathf.Lerp(_spawnedUnits[i].transform.position.x, transform.position.x + i * 0.5f,
+                            Time.deltaTime * snakeMoveSpeed),
+                        _spawnedUnits[i].transform.position.y, _spawnedUnits[i].transform.position.z);
+                }
+                else
+                {
+                    _spawnedUnits[i].transform.position = new Vector3(
+                        Mathf.Lerp(_spawnedUnits[i].transform.position.x, _spawnedUnits[i - 3].transform.position.x,
+                            Time.deltaTime * snakeMoveSpeed),
                         _spawnedUnits[i].transform.position.y, _spawnedUnits[i].transform.position.z);
                 }
             }
