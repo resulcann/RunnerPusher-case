@@ -5,10 +5,10 @@ using UnityEngine;
 public class UnitController : MonoBehaviour
 {
     public static UnitController Instance { get; private set; }
-    private FormationBase _formation;
-    public FormationBase Formation {
+    private FormationController _formation;
+    public FormationController Formation {
         get {
-            if (_formation == null) _formation = GetComponent<FormationBase>();
+            if (_formation == null) _formation = GetComponent<FormationController>();
             return _formation;
         }
         set => _formation = value;
