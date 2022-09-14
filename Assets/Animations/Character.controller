@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -884384744100951242}
-    m_Position: {x: 322.02625, y: 49.174072, z: 0}
+    m_Position: {x: 320, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2316554687697845765}
     m_Position: {x: 320, y: 120, z: 0}
@@ -32,7 +32,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 40, y: 110, z: 0}
   m_ExitPosition: {x: 50, y: -40, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 2316554687697845765}
+  m_DefaultState: {fileID: -884384744100951242}
 --- !u!1102 &-884384744100951242
 AnimatorState:
   serializedVersion: 6
@@ -75,12 +75,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Idle
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: Win
     m_Type: 4
     m_DefaultFloat: 0
@@ -88,6 +82,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Lose
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Idle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -164,7 +164,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Running
+  m_Name: Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

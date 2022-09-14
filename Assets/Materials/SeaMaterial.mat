@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SeaMaterial
   m_Shader: {fileID: 4800000, guid: 8bc4e62ea9d964448a2c2e539d65b77a, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -87,19 +88,19 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RampSmooth: 0.1
-    - _RampThreshold: 0.5
+    - _RampThreshold: 1
     - _RimMax: 1
     - _RimMin: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UVWaveAmplitude: 0.028
+    - _UVWaveAmplitude: 0.05
     - _UVWaveFrequency: 5
     - _UVWaveSpeed: 1
     - _WaveFrequency: 1
     - _WaveHeight: 0
-    - _WaveSpeed: 0.05
+    - _WaveSpeed: 2
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:

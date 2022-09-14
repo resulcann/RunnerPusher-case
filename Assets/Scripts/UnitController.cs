@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class UnitController : MonoBehaviour
         }
         set => _formation = value;
     }
-
+    
     [SerializeField] private Unit unitPrefab;
     [SerializeField] private float snakeMoveSpeed = 20;
 
@@ -27,6 +28,11 @@ public class UnitController : MonoBehaviour
         Instance = this;
         _units = new GameObject("Units").transform;
         _units.parent = transform.parent;
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
     }
 
     private void Update() 
@@ -68,6 +74,7 @@ public class UnitController : MonoBehaviour
         foreach (var pos in points) {
             var unit = Instantiate(unitPrefab, transform.position + pos, Quaternion.identity, _units);
             SpawnedUnits.Add(unit);
+            GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
         }
     }
 
@@ -76,6 +83,7 @@ public class UnitController : MonoBehaviour
             var unit = SpawnedUnits.Last();
             SpawnedUnits.Remove(unit);
             Destroy(unit.gameObject);
+            GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
         }
     }
 }
