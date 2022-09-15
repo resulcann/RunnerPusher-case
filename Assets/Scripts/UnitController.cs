@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -22,6 +21,7 @@ public class UnitController : MonoBehaviour
     public readonly List<Unit> SpawnedUnits = new List<Unit>();
     private List<Vector3> _points = new List<Vector3>();
     private Transform _units;
+    private static readonly int Run = Animator.StringToHash("Run");
 
     private void Awake()
     {
@@ -69,15 +69,16 @@ public class UnitController : MonoBehaviour
             }
         }
     }
-
     private void Spawn(IEnumerable<Vector3> points) {
         foreach (var pos in points) {
             var unit = Instantiate(unitPrefab, transform.position + pos, Quaternion.identity, _units);
             SpawnedUnits.Add(unit);
+            unit.stickManColor = SpawnedUnits[0].stickManColor;
+            unit.renderer.material = SpawnedUnits[0].renderer.material;
             GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
+            if(GameManager.Instance.gameState == GameState.Gameplay) unit.GetComponent<Animator>().SetBool(Run,true);
         }
     }
-
     private void Kill(int num) {
         for (var i = 0; i < num; i++) {
             var unit = SpawnedUnits.Last();

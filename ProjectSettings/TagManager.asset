@@ -7,6 +7,9 @@ TagManager:
   - Stickman
   - Enemy
   - Collectible
+  - ColorGate
+  - PushingMan
+  - PushingStage
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Stickman
-  - 
+  - PushingMan
   - 
   - 
   - 

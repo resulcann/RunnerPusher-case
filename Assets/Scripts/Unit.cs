@@ -1,8 +1,9 @@
-using System;
 using UnityEngine;
 public class Unit : MonoBehaviour
 {
     private Animator _animator;
+    public Colors stickManColor = Colors.Yellow;
+    public new Renderer renderer;
     private static readonly int Run = Animator.StringToHash("Run");
 
     private void Awake()
@@ -10,12 +11,13 @@ public class Unit : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void Start()
     {
-        if (GameManager.Instance.gameState != GameState.Gameplay) return;
-        _animator.SetBool(Run,true);
+        if (stickManColor == Colors.Blue) renderer.material = GameManager.Instance.blueMat;
+        else if (stickManColor == Colors.Red) renderer.material = GameManager.Instance.redMat;
+        else if (stickManColor == Colors.Yellow) renderer.material = GameManager.Instance.yellowMat;
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         var otherGo = other.gameObject;

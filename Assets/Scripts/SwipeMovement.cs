@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterMove : MonoBehaviour
+public class SwipeMovement : MonoBehaviour
 {
 
 
@@ -23,6 +23,8 @@ public class CharacterMove : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.IsActive) return;
+        transform.parent.Translate(Vector3.forward * Time.deltaTime * GameManager.Instance.crowdSpeed);
         HandLeMovement();
     }
 

@@ -1,5 +1,3 @@
-using System;
-using Dreamteck.Splines;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +10,12 @@ public enum OperationState
     Multiplication,
     Division
 }
-public enum UnitColor
+public enum Colors
 {
     Red,
     Blue,
     Yellow
 }
-
 public enum GameState
 {
     None,
@@ -30,12 +27,16 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public bool IsActive { get; set; }
     public Material addMat, subMat, multMat, divMat;
+    public Material redMat, blueMat, yellowMat;
     public TextMeshProUGUI currentCrowdNumber;
+    public Image crowdNumberImg;
     public Button tapToStartBtn;
-    public SplineFollower splineFollower;
-    public GameState gameState;
-    public float crowdSpeed;
+    [HideInInspector] public GameState gameState;
+    public float crowdSpeed, tempSpeed;
+    [HideInInspector] public int pushingManCount;
+    private static readonly int Run = Animator.StringToHash("Run");
 
 
     private void Awake()
@@ -43,30 +44,21 @@ public class GameManager : MonoBehaviour
         Instance = this;
         tapToStartBtn.gameObject.SetActive(true);
         gameState = GameState.Loading;
-        splineFollower.follow = false;
+        tempSpeed = crowdSpeed;
+        crowdSpeed = 0f;
     }
     
-    private void Update()
-    {
-        if (gameState != GameState.Gameplay) return;
-        splineFollower.followSpeed = crowdSpeed;
-    }
-
     public void StartGamePlay()
     {
         gameState = GameState.Gameplay;
-        splineFollower.follow = true;
         tapToStartBtn.gameObject.SetActive(false);
-    }
-    
-    public void WinGame()
-    {
-        
-    }
+        crowdSpeed = tempSpeed;
+        IsActive = true;
 
-    public void LoseGame()
-    {
+        foreach (var unit in UnitController.Instance.SpawnedUnits)
+        {
+            unit.GetComponent<Animator>().SetBool(Run,true);
+        }
         
     }
-    
 }
