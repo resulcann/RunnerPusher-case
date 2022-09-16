@@ -11,6 +11,7 @@ public class SwipeMovement : MonoBehaviour
     private float _mouseStartPos;
     private float _mouseCurrentPos;
     private float _playerCurrentPos;
+    
 
 
     private void Start()
@@ -21,14 +22,14 @@ public class SwipeMovement : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
         if (!GameManager.Instance.IsActive) return;
-        transform.parent.Translate(Vector3.forward * Time.deltaTime * GameManager.Instance.crowdSpeed);
-        HandLeMovement();
+        transform.parent.Translate(Vector3.forward * (Time.deltaTime * GameManager.Instance.crowdSpeed));
+        if(GameManager.Instance.CanSwipe) HandLeMovement();
     }
 
-    void HandLeMovement()
+    private void HandLeMovement()
     {
 
         if (Input.GetMouseButtonDown(0))

@@ -6,6 +6,8 @@ public class Collectible : MonoBehaviour
     [SerializeField] private TextMeshProUGUI numberText;
     public OperationState operationState;
     public int number;
+    public float moveSpeed;
+    public bool canPingPong;
 
 
     private void Start()
@@ -29,5 +31,14 @@ public class Collectible : MonoBehaviour
                 GetComponent<Renderer>().material = GameManager.Instance.divMat;
                 break;
         }
+
+        moveSpeed = Random.Range(moveSpeed / 1.5f, moveSpeed * 1.5f);
+    }
+
+    private void Update()
+    {
+        if (!canPingPong) return;
+        var pos = transform.position;
+        transform.position = new Vector3(Mathf.PingPong( moveSpeed * Time.time, 6f) -3, pos.y, pos.z);
     }
 }

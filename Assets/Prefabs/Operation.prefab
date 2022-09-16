@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5142624721716699216}
   - component: {fileID: 5142624721716699223}
   - component: {fileID: 5142624721716699222}
-  - component: {fileID: 5142624721716699217}
   - component: {fileID: 5142624721716699220}
+  - component: {fileID: 2406653906662938798}
   m_Layer: 0
   m_Name: Operation
   m_TagString: Collectible
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5142624721716699217
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5142624721716699219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5142624721716699220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +101,21 @@ MonoBehaviour:
   numberText: {fileID: 5142624722941261720}
   operationState: 1
   number: 5
+  moveSpeed: 4
+  canPingPong: 1
+--- !u!65 &2406653906662938798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142624721716699219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5142624722618280730
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,9 +313,9 @@ MonoBehaviour:
   m_fontSize: 0.6
   m_fontSizeBase: 0.6
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0.4
+  m_fontSizeMax: 0.6
   m_fontStyle: 1
   m_HorizontalAlignment: 32
   m_VerticalAlignment: 8192
@@ -324,7 +326,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -344,7 +346,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.060583413, y: 0, z: 0.07657105, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

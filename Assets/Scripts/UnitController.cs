@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitController : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class UnitController : MonoBehaviour
     
     [SerializeField] private Unit unitPrefab;
     [SerializeField] private float snakeMoveSpeed = 20;
+    [SerializeField] private TextMeshProUGUI currentCrowdNumber;
+    public Image crowdNumberImg;
 
 
     public readonly List<Unit> SpawnedUnits = new List<Unit>();
@@ -32,7 +36,7 @@ public class UnitController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
+        currentCrowdNumber.text = SpawnedUnits.Count.ToString();
     }
 
     private void Update() 
@@ -73,9 +77,9 @@ public class UnitController : MonoBehaviour
         foreach (var pos in points) {
             var unit = Instantiate(unitPrefab, transform.position + pos, Quaternion.identity, _units);
             SpawnedUnits.Add(unit);
-            unit.stickManColor = SpawnedUnits[0].stickManColor;
-            unit.renderer.material = SpawnedUnits[0].renderer.material;
-            GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
+            unit.stickManColor = SpawnedUnits.First().stickManColor;
+            unit.renderer.material = SpawnedUnits.First().renderer.material;
+            currentCrowdNumber.text = SpawnedUnits.Count.ToString();
             if(GameManager.Instance.gameState == GameState.Gameplay) unit.GetComponent<Animator>().SetBool(Run,true);
         }
     }
@@ -84,7 +88,7 @@ public class UnitController : MonoBehaviour
             var unit = SpawnedUnits.Last();
             SpawnedUnits.Remove(unit);
             Destroy(unit.gameObject);
-            GameManager.Instance.currentCrowdNumber.text = SpawnedUnits.Count.ToString();
+            currentCrowdNumber.text = SpawnedUnits.Count.ToString();
         }
     }
 }

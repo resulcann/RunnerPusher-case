@@ -16,15 +16,27 @@ public class ColorGate : MonoBehaviour
         {
             otherGo.GetComponent<Unit>().stickManColor = gateColor;
             otherGo.GetComponent<Unit>().renderer.material = gateMaterial;
-            GameManager.Instance.crowdNumberImg.GetComponent<Image>().color = gateColor switch
+            switch (gateColor)
             {
-                Colors.Blue => new Color32(100, 225, 255, 255),
-                Colors.Red => new Color32(255, 101, 116, 255),
-                Colors.Yellow => new Color32(240, 230, 130, 255),
-                _ => new Color32(240, 230, 130, 255)
-            };
+                case Colors.Blue:
+                    UnitController.Instance.crowdNumberImg.GetComponent<Image>().color =
+                        new Color32(100, 225, 255, 255);
+                    GameManager.Instance.unitColor = Colors.Blue;
+                    break;
+                case Colors.Red:
+                    UnitController.Instance.crowdNumberImg.GetComponent<Image>().color =
+                        new Color32(255, 101, 116, 255);
+                    GameManager.Instance.unitColor = Colors.Red;
+                    break;
+                case Colors.Yellow:
+                default:
+                    UnitController.Instance.crowdNumberImg.GetComponent<Image>().color =
+                        new Color32(240, 230, 130, 255);
+                    GameManager.Instance.unitColor = Colors.Yellow;
+                    break;
+            }
         }
-        else if (otherGo.CompareTag("PushingMan") && this.gateColor != otherGo.GetComponent<Unit>().stickManColor)
+        else if (otherGo.CompareTag("PushingMan"))
         {
             otherGo.GetComponent<Unit>().stickManColor = gateColor;
             otherGo.GetComponent<Unit>().renderer.material = gateMaterial;

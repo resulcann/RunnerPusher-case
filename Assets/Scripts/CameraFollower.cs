@@ -3,11 +3,11 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour
 {
     public Transform target;
-    [SerializeField] private float smoothTime = 0.25f;
-    [SerializeField] private Vector3 offset;
+    public float smoothTime = 0.25f;
+    public Vector3 offset;
     [SerializeField] private Vector3 velocity = Vector3.zero;
 
-    private void Update()
+    private void LateUpdate()
     {
         var camPos = transform.position;
         var desiredPos = target.position + offset;
