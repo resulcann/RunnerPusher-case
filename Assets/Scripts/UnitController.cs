@@ -1,8 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UnitController : MonoBehaviour
 {
@@ -20,12 +22,14 @@ public class UnitController : MonoBehaviour
     [SerializeField] private float snakeMoveSpeed = 20;
     [SerializeField] private TextMeshProUGUI currentCrowdNumber;
     public Image crowdNumberImg;
+    private int _tempRow = 1;
 
 
     public readonly List<Unit> SpawnedUnits = new List<Unit>();
     private List<Vector3> _points = new List<Vector3>();
     private Transform _units;
     private static readonly int Run = Animator.StringToHash("Run");
+    private static readonly int Sitting = Animator.StringToHash("Sitting");
 
     private void Awake()
     {
@@ -39,7 +43,7 @@ public class UnitController : MonoBehaviour
         currentCrowdNumber.text = SpawnedUnits.Count.ToString();
     }
 
-    private void Update() 
+    private void Update()
     {
         SetFormation();
     }
@@ -89,6 +93,37 @@ public class UnitController : MonoBehaviour
             SpawnedUnits.Remove(unit);
             Destroy(unit.gameObject);
             currentCrowdNumber.text = SpawnedUnits.Count.ToString();
+        }
+    }
+
+    public IEnumerator TowerFormation()
+    {
+        var posY = 1;
+        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
+        snakeMoveSpeed = 100f;
+        cameraFollower.onEndGame = true;
+        cameraFollower.SetFinishCameraPos(1f);
+        crowdNumberImg.gameObject.SetActive(false);
+
+        if (SpawnedUnits.Count > 3)
+        {
+            for (var i = 3; i < SpawnedUnits.Count; i++)
+            {
+                var currentPos = SpawnedUnits[i].transform.localPosition;
+            
+                SpawnedUnits[i].transform.DOLocalMove(new Vector3(SpawnedUnits[i-3].transform.localPosition.x, currentPos.y + posY, 
+                    SpawnedUnits[0].transform.localPosition.z), 0.1f);
+                SpawnedUnits[i].GetComponent<Animator>().SetBool(Sitting,true);
+                yield return new WaitForSeconds(0.05f);
+            
+                if (_tempRow % 3 == 0)
+                {
+                    posY++;
+                    cameraFollower.SetFinishCameraPos(1f);
+                    _tempRow = 1;
+                }
+                else _tempRow++;
+            }
         }
     }
 }

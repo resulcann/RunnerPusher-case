@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255079594235354356}
-  m_LocalRotation: {x: 0, y: -0.70281774, z: -0, w: 0.71137005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 1.0567551, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 3437649334862412837}
   - component: {fileID: 7943660929238439199}
   - component: {fileID: 6043015725340060153}
-  - component: {fileID: 3437649334862412838}
+  - component: {fileID: 4577357381696193937}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Enemy
@@ -217,7 +217,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3437649334862412838
+--- !u!64 &4577357381696193937
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

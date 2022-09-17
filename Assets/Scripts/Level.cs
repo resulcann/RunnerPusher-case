@@ -10,12 +10,7 @@ public class Level : ScriptableObject
     public void CreateLevel()
     {
         _spawnedLevelPrefab = Instantiate(levelPrefab);
-        if (Camera.main == null) return;
-        var mainCam = Camera.main.GetComponent<CameraFollower>();
-        mainCam.target = FindObjectOfType<UnitController>().transform.parent;
-        mainCam.transform.position = new Vector3(0f,0f,mainCam.offset.z);
         GameManager.Instance.unitColor = Colors.Yellow;
-
     }
 
     public void DestroyLevel()

@@ -10,6 +10,10 @@ TagManager:
   - ColorGate
   - PushingMan
   - PushingStage
+  - FinishStairs
+  - FinishLine
+  - FirstGuy
+  - Cutter
   layers:
   - Default
   - TransparentFX

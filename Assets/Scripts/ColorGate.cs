@@ -42,7 +42,7 @@ public class ColorGate : MonoBehaviour
             otherGo.GetComponent<Unit>().renderer.material = gateMaterial;
             otherGo.transform.DORotate(new Vector3(0f,-360f,0f), 1f);
             otherGo.transform.DOMove(UnitController.Instance.SpawnedUnits.Last().transform.position, .2f).OnComplete(()=>
-                Collector.Instance.pusherMans.RemoveAt(Collector.Instance.pusherMans.Count-1));
+                CrowdCollisions.Instance.pusherMans.RemoveAt(CrowdCollisions.Instance.pusherMans.Count-1));
             DOTween.CompleteAll();
             Destroy(otherGo);
             FormationController.Instance.numberOfUnit++;

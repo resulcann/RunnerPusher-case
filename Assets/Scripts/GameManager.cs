@@ -36,10 +36,14 @@ public class GameManager : MonoBehaviour
     public float crowdSpeed, tempSpeed;
     public Colors unitColor;
     private static readonly int Run = Animator.StringToHash("Run");
+    private static readonly int Win = Animator.StringToHash("Win");
+    private static readonly int Sitting = Animator.StringToHash("Sitting");
+    [HideInInspector] public Camera mainCam;
 
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         Instance = this;
         tapToStartBtn.gameObject.SetActive(true);
         finishSuccessUI.gameObject.SetActive(false);
@@ -49,14 +53,19 @@ public class GameManager : MonoBehaviour
         crowdSpeed = 0f;
         unitColor = Colors.Yellow;
     }
-    
+
+    private void Start()
+    {
+        mainCam = Camera.main;
+    }
+
     public void StartGamePlay()
     {
         gameState = GameState.Gameplay;
         tapToStartBtn.gameObject.SetActive(false);
         finishSuccessUI.gameObject.SetActive(false);
         finishFailUI.gameObject.SetActive(false);
-        if (Camera.main != null) Camera.main.GetComponent<CameraFollower>().enabled = true;
+        mainCam.GetComponent<CameraFollower>().enabled = true;
         crowdSpeed = tempSpeed;
         IsActive = true;
         CanSwipe = true;
@@ -65,7 +74,6 @@ public class GameManager : MonoBehaviour
         {
             unit.GetComponent<Animator>().SetBool(Run,true);
         }
-        
     }
 
     public void FinishGamePlay(bool success)
@@ -73,5 +81,10 @@ public class GameManager : MonoBehaviour
         IsActive = false;
         if(success) finishSuccessUI.gameObject.SetActive(true);
         else finishFailUI.gameObject.SetActive(true);
+        foreach (var unit in UnitController.Instance.SpawnedUnits)
+        {
+            unit.GetComponent<Animator>().SetBool(Win,true);
+            unit.GetComponent<Animator>().SetBool(Sitting,false);
+        }
     }
 }

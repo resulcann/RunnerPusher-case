@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
     private void SpawnCurrentLevel()
     {
         levels[currentLevelIndex].CreateLevel();
+        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
+        cameraFollower.SetDefaultCameraValues();
     }
 
     public void NextLevel()
@@ -42,11 +44,15 @@ public class LevelManager : MonoBehaviour
             currentLevelIndex = randomValue;
             levels[currentLevelIndex].CreateLevel();
         }
+        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
+        cameraFollower.SetDefaultCameraValues();
     }
     public void RetryLevel()
     {
         levels[currentLevelIndex].DestroyLevel();
         levels[currentLevelIndex].CreateLevel();
+        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
+        cameraFollower.SetDefaultCameraValues();
         GameManager.Instance.StartGamePlay();
     }
 

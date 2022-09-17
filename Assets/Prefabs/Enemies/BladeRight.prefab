@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5847110469461030663}
   m_Layer: 0
   m_Name: blade1
-  m_TagString: Enemy
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3452549967758459242}
   m_Layer: 0
   m_Name: BladeRight
-  m_TagString: Enemy
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 6024267824321477234}
   m_Layer: 0
   m_Name: track
-  m_TagString: Untagged
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

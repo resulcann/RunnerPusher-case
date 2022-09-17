@@ -4,14 +4,17 @@ using System.Linq;
 using UnityEngine;
 using DG.Tweening;
 
-public class Collector : MonoBehaviour
+public class CrowdCollisions : MonoBehaviour
 {
-    public static Collector Instance { get; private set; }
+    public static CrowdCollisions Instance { get; private set; }
     private static readonly int Pushing = Animator.StringToHash("Pushing");
     private static readonly int Run = Animator.StringToHash("Run");
     private Transform _pusherMans;
     private bool _isPushingBack, _goToCrew;
     public List<Unit> pusherMans = new List<Unit>();
+    private int _stairsHeight;
+    private static readonly int Win = Animator.StringToHash("Win");
+    private static readonly int Sitting = Animator.StringToHash("Sitting");
 
     private void Awake()
     {
@@ -21,12 +24,6 @@ public class Collector : MonoBehaviour
     private void Update()
     {
         if (_isPushingBack) _pusherMans.Translate(Vector3.forward * (Time.deltaTime * GameManager.Instance.crowdSpeed));
-        if (!_goToCrew) return;
-        _pusherMans.position = Vector3.MoveTowards(_pusherMans.position,
-            UnitController.Instance.SpawnedUnits.First().transform.position,
-            GameManager.Instance.crowdSpeed * 3f * Time.deltaTime);
-    // Todo go to crew düzgün çalısmıyor!!
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -82,7 +79,8 @@ public class Collector : MonoBehaviour
                     unit.GetComponent<Animator>().SetBool(Run,false);
                 }
                 _pusherMans = pushingStage.leftStageCharacters;
-                if (pushingStage.leftStageColor == GameManager.Instance.unitColor) _goToCrew = true;
+                pushingStage.middleStageCharacters.GetComponent<BoxCollider>().enabled = false;
+                pushingStage.rightStageCharacters.GetComponent<BoxCollider>().enabled = false;
             }
             else if (otherGo == pushingStage.middleStageCharacters.gameObject)
             {
@@ -92,11 +90,8 @@ public class Collector : MonoBehaviour
                     unit.GetComponent<Animator>().SetBool(Run,false);
                 }
                 _pusherMans = pushingStage.middleStageCharacters;
-                if (pushingStage.middleStageColor == GameManager.Instance.unitColor)
-                {
-                    _goToCrew = true;
-                    Debug.Log("midden geçti");
-                }
+                pushingStage.leftStageCharacters.GetComponent<BoxCollider>().enabled = false;
+                pushingStage.rightStageCharacters.GetComponent<BoxCollider>().enabled = false;
             }
             else if (otherGo == pushingStage.rightStageCharacters.gameObject)
             {
@@ -106,7 +101,8 @@ public class Collector : MonoBehaviour
                     unit.GetComponent<Animator>().SetBool(Run,false);
                 }
                 _pusherMans = pushingStage.rightStageCharacters;
-                if (pushingStage.rightStageColor == GameManager.Instance.unitColor) _goToCrew = true;
+                pushingStage.middleStageCharacters.GetComponent<BoxCollider>().enabled = false;
+                pushingStage.leftStageCharacters.GetComponent<BoxCollider>().enabled = false;
             }
 
             transform.DOMoveX(otherGo.transform.position.x -0.5f, 0.1f);
@@ -121,42 +117,46 @@ public class Collector : MonoBehaviour
                 StartCoroutine(PushedBack(otherGo.transform));
             }
         }
-        else if (otherGo.CompareTag("PushingStage") && otherGo.GetComponentInChildren<Unit>().stickManColor == GameManager.Instance.unitColor)
-        {
-            var pushingStage = otherGo.GetComponentInParent<PushingStage>();
-            
-            if (otherGo == pushingStage.leftStageCharacters.gameObject)
-            {
-                foreach (var unit in pushingStage.leftCharacters)
-                {
-                    unit.GetComponent<Animator>().SetBool(Run,true);
-                }
-                _pusherMans = pushingStage.leftStageCharacters;
-            }
-            else if (otherGo == pushingStage.middleStageCharacters.gameObject)
-            {
-                foreach (var unit in pushingStage.middleCharacters)
-                {
-                    unit.GetComponent<Animator>().SetBool(Run,true);
-                }
-                _pusherMans = pushingStage.middleStageCharacters;
-            }
-            else if (otherGo == pushingStage.rightStageCharacters.gameObject)
-            {
-                foreach (var unit in pushingStage.rightCharacters)
-                {
-                    unit.GetComponent<Animator>().SetBool(Run,true);
-                }
-                _pusherMans = pushingStage.rightStageCharacters;
-            }
-            _goToCrew = true;
-        }
+        
         if (otherGo.CompareTag("PushingMan") && otherGo.GetComponentInChildren<Unit>().stickManColor == UnitController.Instance.SpawnedUnits[0].stickManColor)
         {
             pusherMans.Remove(otherGo.GetComponent<Unit>());
             Destroy(otherGo);
             FormationController.Instance.numberOfUnit++;
         }
+        if(otherGo.CompareTag("FinishLine"))
+        {
+            otherGo.GetComponent<Animation>().Play();
+            StartCoroutine(UnitController.Instance.TowerFormation());
+        }
+
+        if (otherGo.CompareTag("FinishStairs"))
+        {
+            var allUnits = UnitController.Instance.SpawnedUnits;
+            if (allUnits.Count > 3)
+            {
+                transform.parent.position += Vector3.up;
+                for (var i = 0; i < 3; i++)
+                {
+                    var lastUnit = allUnits.Last();
+                    var lastUnitTransform = lastUnit.transform;
+                    var lastUnitPos = lastUnitTransform.position;
+                    lastUnit.GetComponent<Animator>().SetBool(Win,true);
+                    lastUnit.GetComponent<Animator>().SetBool(Sitting,false);
+                    allUnits.Remove(lastUnit);
+                    FormationController.Instance.numberOfUnit--;
+                    lastUnit.transform.parent = transform.root;
+                    lastUnitTransform.position = new Vector3(lastUnitPos.x, _stairsHeight, lastUnitPos.z -0.75f);
+                }
+                GameManager.Instance.mainCam.GetComponent<CameraFollower>().SetFinishCameraPos(-1f);
+                _stairsHeight++;
+            }
+            else 
+                GameManager.Instance.FinishGamePlay(true);
+            
+        }
+        
+        
     }
     
     private IEnumerator Push(Component otherStageCharacters)
@@ -184,7 +184,7 @@ public class Collector : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         GameManager.Instance.crowdSpeed = -1.5f;
         _isPushingBack = true;
-        if (Camera.main != null) Camera.main.GetComponent<CameraFollower>().enabled = false;
+        GameManager.Instance.mainCam.GetComponent<CameraFollower>().enabled = false;
         yield return new WaitUntil(() =>
         {
             Camera main;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6244639077103218175}
   m_Layer: 0
   m_Name: axe
-  m_TagString: Enemy
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 7059472628743064897}
   m_Layer: 0
   m_Name: Axe_obstacle
-  m_TagString: Enemy
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 5741087645574004604}
   m_Layer: 0
   m_Name: axe_handle
-  m_TagString: Enemy
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
