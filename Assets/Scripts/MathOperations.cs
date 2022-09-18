@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public class MathOperations : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI numberText;
     public OperationState operationState;

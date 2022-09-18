@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance { get; private set; }
     public List<Level> levels;
     public int currentLevelIndex;
     [HideInInspector] public bool isRandom;
+    private CameraFollower _cameraFollower;
 
     private void Awake()
     {
-        Instance = this;
         isRandom = false;
+        _cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
         if (currentLevelIndex == levels.Count-1) isRandom = true;
+        
     }
 
     private void Start()
@@ -23,8 +24,7 @@ public class LevelManager : MonoBehaviour
     private void SpawnCurrentLevel()
     {
         levels[currentLevelIndex].CreateLevel();
-        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
-        cameraFollower.SetDefaultCameraValues();
+        _cameraFollower.SetDefaultCameraValues();
     }
 
     public void NextLevel()
@@ -44,15 +44,15 @@ public class LevelManager : MonoBehaviour
             currentLevelIndex = randomValue;
             levels[currentLevelIndex].CreateLevel();
         }
-        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
-        cameraFollower.SetDefaultCameraValues();
+        _cameraFollower.SetDefaultCameraValues();
+        GameManager.Instance.StartGamePlay();
+
     }
     public void RetryLevel()
     {
         levels[currentLevelIndex].DestroyLevel();
         levels[currentLevelIndex].CreateLevel();
-        var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
-        cameraFollower.SetDefaultCameraValues();
+        _cameraFollower.SetDefaultCameraValues();
         GameManager.Instance.StartGamePlay();
     }
 

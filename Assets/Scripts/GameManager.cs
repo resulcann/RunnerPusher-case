@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         Instance = this;
+        mainCam = Camera.main;
         tapToStartBtn.gameObject.SetActive(true);
         finishSuccessUI.gameObject.SetActive(false);
         finishFailUI.gameObject.SetActive(false);
@@ -54,14 +55,10 @@ public class GameManager : MonoBehaviour
         unitColor = Colors.Yellow;
     }
 
-    private void Start()
-    {
-        mainCam = Camera.main;
-    }
-
     public void StartGamePlay()
     {
         gameState = GameState.Gameplay;
+        unitColor = Colors.Yellow;
         tapToStartBtn.gameObject.SetActive(false);
         finishSuccessUI.gameObject.SetActive(false);
         finishFailUI.gameObject.SetActive(false);

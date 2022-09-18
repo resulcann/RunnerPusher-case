@@ -20,8 +20,9 @@ public class Unit : MonoBehaviour
         
         if (otherGo.CompareTag("Cutter"))
         {
-            var leaverCount = unitCount - (units.IndexOf(this) + 1);
-            FormationController.Instance.numberOfUnit -= leaverCount;   //Engelin çarptığı unit'den öncesini siler
+            var leaverCount = unitCount - units.IndexOf(this);
+            FormationController.Instance.numberOfUnit -= leaverCount;
+            otherGo.GetComponent<Collider>().enabled = false;//Engelin çarptığı unit'den öncesini siler
             if (FormationController.Instance.numberOfUnit <= 0) GameManager.Instance.FinishGamePlay(false);
         }
         else if (otherGo.CompareTag("Enemy"))

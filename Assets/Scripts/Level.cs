@@ -10,7 +10,6 @@ public class Level : ScriptableObject
     public void CreateLevel()
     {
         _spawnedLevelPrefab = Instantiate(levelPrefab);
-        GameManager.Instance.unitColor = Colors.Yellow;
     }
 
     public void DestroyLevel()

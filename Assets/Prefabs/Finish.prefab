@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2599047}
   - component: {fileID: 2599046}
   m_Layer: 5
-  m_Name: 5.25xText
+  m_Name: 10,5xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5,25X
+  m_text: 10,5X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 45920730}
   - component: {fileID: 45920729}
   m_Layer: 5
-  m_Name: 2,25xText
+  m_Name: 7,5xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2,25X
+  m_text: 7,5X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 80115360}
   - component: {fileID: 80115359}
   m_Layer: 0
-  m_Name: 1,5x
+  m_Name: 6,75x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 136164280}
   - component: {fileID: 136164279}
   m_Layer: 5
-  m_Name: 3xText
+  m_Name: 8,25xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3X
+  m_text: 8,25X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 249437294}
   - component: {fileID: 249437293}
   m_Layer: 0
-  m_Name: 2,5x
+  m_Name: 7,75x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 282984510}
   - component: {fileID: 282984509}
   m_Layer: 5
-  m_Name: 5.75xText
+  m_Name: 11xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5,75X
+  m_text: 11X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 379244197}
   - component: {fileID: 379244196}
   m_Layer: 5
-  m_Name: 4.25xText
+  m_Name: 9,5xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4,25X
+  m_text: '9,5X
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -883,7 +885,7 @@ GameObject:
   - component: {fileID: 416378494}
   - component: {fileID: 416378493}
   m_Layer: 5
-  m_Name: 3.25xText
+  m_Name: 8,5xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,7 +939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3,25X
+  m_text: 8,5X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1019,7 +1021,7 @@ GameObject:
   - component: {fileID: 420719267}
   - component: {fileID: 420719266}
   m_Layer: 0
-  m_Name: 1.25x
+  m_Name: 6,50x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1118,7 @@ GameObject:
   - component: {fileID: 426776725}
   - component: {fileID: 426776724}
   m_Layer: 5
-  m_Name: 2,5xText
+  m_Name: 7,75xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,7 +1172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2,5X
+  m_text: 7,75X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1252,7 +1254,7 @@ GameObject:
   - component: {fileID: 512381738}
   - component: {fileID: 512381737}
   m_Layer: 0
-  m_Name: 5.75x
+  m_Name: 11x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1349,7 +1351,7 @@ GameObject:
   - component: {fileID: 564739754}
   - component: {fileID: 564739753}
   m_Layer: 5
-  m_Name: 3.5xText
+  m_Name: 8,75xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,7 +1405,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3,5X
+  m_text: 8,75X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1484,7 +1486,7 @@ GameObject:
   - component: {fileID: 575156736}
   - component: {fileID: 575156735}
   m_Layer: 5
-  m_Name: 1,5xText
+  m_Name: 6,75xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,7 +1540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1,5X
+  m_text: 6,75X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1633,8 +1635,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601594161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.75, z: 54.250008}
-  m_LocalScale: {x: 6, y: 20.5, z: 30}
+  m_LocalPosition: {x: 0, y: 9.75, z: 46.75}
+  m_LocalScale: {x: 6, y: 20.5, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3650153448811273999}
@@ -1702,7 +1704,7 @@ GameObject:
   - component: {fileID: 628067550}
   - component: {fileID: 628067549}
   m_Layer: 5
-  m_Name: 3.75xText
+  m_Name: 9xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1756,7 +1758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3,75X
+  m_text: 9X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1838,7 +1840,7 @@ GameObject:
   - component: {fileID: 905083717}
   - component: {fileID: 905083716}
   m_Layer: 0
-  m_Name: 2x
+  m_Name: 7,25x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1936,7 +1938,7 @@ GameObject:
   - component: {fileID: 1074460268}
   - component: {fileID: 1074460267}
   m_Layer: 0
-  m_Name: 3x
+  m_Name: 8,25x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2034,7 +2036,7 @@ GameObject:
   - component: {fileID: 1098988487}
   - component: {fileID: 1098988486}
   m_Layer: 0
-  m_Name: 3.5x
+  m_Name: 8,75x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2131,7 +2133,7 @@ GameObject:
   - component: {fileID: 1261509390}
   - component: {fileID: 1261509389}
   m_Layer: 5
-  m_Name: 2xText
+  m_Name: 7,25xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2185,7 +2187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2X
+  m_text: 7,25X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2267,7 +2269,7 @@ GameObject:
   - component: {fileID: 1291374799}
   - component: {fileID: 1291374798}
   m_Layer: 0
-  m_Name: 5.25x
+  m_Name: 10,5x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2365,7 +2367,7 @@ GameObject:
   - component: {fileID: 1299338486}
   - component: {fileID: 1299338485}
   m_Layer: 0
-  m_Name: 1x
+  m_Name: 6,25x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2462,7 +2464,7 @@ GameObject:
   - component: {fileID: 1322220399}
   - component: {fileID: 1322220398}
   m_Layer: 5
-  m_Name: 5.5xText
+  m_Name: 10,75xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2516,7 +2518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5,5X
+  m_text: 10,75X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2598,7 +2600,7 @@ GameObject:
   - component: {fileID: 1377578325}
   - component: {fileID: 1377578324}
   m_Layer: 0
-  m_Name: 2.25x
+  m_Name: 7,5x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2695,7 +2697,7 @@ GameObject:
   - component: {fileID: 1378305573}
   - component: {fileID: 1378305572}
   m_Layer: 5
-  m_Name: 1,75xText
+  m_Name: 7xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2749,7 +2751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1,75X
+  m_text: 7X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2830,7 +2832,7 @@ GameObject:
   - component: {fileID: 1396435624}
   - component: {fileID: 1396435623}
   m_Layer: 5
-  m_Name: 2,75xText
+  m_Name: 8xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2884,7 +2886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2,75X
+  m_text: 8X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2965,7 +2967,7 @@ GameObject:
   - component: {fileID: 1415614135}
   - component: {fileID: 1415614134}
   m_Layer: 5
-  m_Name: 6xText
+  m_Name: 12xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3019,7 +3021,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 6X
+  m_text: 12X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3101,7 +3103,7 @@ GameObject:
   - component: {fileID: 1456646052}
   - component: {fileID: 1456646051}
   m_Layer: 0
-  m_Name: 4.25x
+  m_Name: 9,5x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3199,7 +3201,7 @@ GameObject:
   - component: {fileID: 1501491452}
   - component: {fileID: 1501491451}
   m_Layer: 0
-  m_Name: 6x
+  m_Name: 12x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3297,7 +3299,7 @@ GameObject:
   - component: {fileID: 1551845755}
   - component: {fileID: 1551845754}
   m_Layer: 0
-  m_Name: 5x
+  m_Name: 10,25x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3394,7 +3396,7 @@ GameObject:
   - component: {fileID: 1552611342}
   - component: {fileID: 1552611341}
   m_Layer: 5
-  m_Name: 4.5xText
+  m_Name: 9,75xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3448,7 +3450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4,5X
+  m_text: 9,75X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3529,7 +3531,7 @@ GameObject:
   - component: {fileID: 1569937363}
   - component: {fileID: 1569937362}
   m_Layer: 5
-  m_Name: 4xText
+  m_Name: 9,25xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3583,7 +3585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4X
+  m_text: 9,25x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3665,7 +3667,7 @@ GameObject:
   - component: {fileID: 1613358356}
   - component: {fileID: 1613358355}
   m_Layer: 0
-  m_Name: 3.25x
+  m_Name: 8,5x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3763,7 +3765,7 @@ GameObject:
   - component: {fileID: 1620616055}
   - component: {fileID: 1620616054}
   m_Layer: 0
-  m_Name: 5.5x
+  m_Name: 10,75x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3981,7 +3983,7 @@ GameObject:
   - component: {fileID: 1629600254}
   - component: {fileID: 1629600253}
   m_Layer: 5
-  m_Name: 4.75xText
+  m_Name: 10xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4035,7 +4037,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4,75X
+  m_text: 10X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4117,7 +4119,7 @@ GameObject:
   - component: {fileID: 1642239884}
   - component: {fileID: 1642239883}
   m_Layer: 0
-  m_Name: 1,75x
+  m_Name: 7x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4212,7 +4214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679165587}
   m_Layer: 0
-  m_Name: FinishStair (1)
+  m_Name: FinishStairs_SecondLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4226,7 +4228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679165586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 69.6}
+  m_LocalPosition: {x: 0, y: 0, z: 54.59997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4247,7 +4249,7 @@ GameObject:
   - component: {fileID: 1707127074}
   - component: {fileID: 1707127073}
   m_Layer: 0
-  m_Name: 4x
+  m_Name: 9,25x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4345,7 +4347,7 @@ GameObject:
   - component: {fileID: 1724106875}
   - component: {fileID: 1724106874}
   m_Layer: 0
-  m_Name: 3.75x
+  m_Name: 9x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4443,7 +4445,7 @@ GameObject:
   - component: {fileID: 1800760230}
   - component: {fileID: 1800760229}
   m_Layer: 0
-  m_Name: 4.75x
+  m_Name: 10x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4540,7 +4542,7 @@ GameObject:
   - component: {fileID: 1815619188}
   - component: {fileID: 1815619187}
   m_Layer: 5
-  m_Name: 1.25xText
+  m_Name: 6,50xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4594,7 +4596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1,25X
+  m_text: 6,50X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4675,7 +4677,7 @@ GameObject:
   - component: {fileID: 2035926567}
   - component: {fileID: 2035926566}
   m_Layer: 5
-  m_Name: 5xText
+  m_Name: 10,25xText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4729,7 +4731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5X
+  m_text: 10,25X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4811,7 +4813,7 @@ GameObject:
   - component: {fileID: 2056801902}
   - component: {fileID: 2056801901}
   m_Layer: 0
-  m_Name: 4.5x
+  m_Name: 9,75x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4908,7 +4910,7 @@ GameObject:
   - component: {fileID: 2058860457}
   - component: {fileID: 2058860456}
   m_Layer: 5
-  m_Name: 1xText
+  m_Name: 6,25Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4962,7 +4964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1X
+  m_text: 6,25X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5044,7 +5046,7 @@ GameObject:
   - component: {fileID: 2081791169}
   - component: {fileID: 2081791168}
   m_Layer: 0
-  m_Name: 2,75x
+  m_Name: 8x
   m_TagString: FinishStairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7491,7 +7493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5354696349272412183}
   m_Layer: 0
-  m_Name: FinishStair
+  m_Name: FinishStairs_FirstLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

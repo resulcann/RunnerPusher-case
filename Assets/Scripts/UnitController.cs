@@ -42,11 +42,14 @@ public class UnitController : MonoBehaviour
     {
         currentCrowdNumber.text = SpawnedUnits.Count.ToString();
     }
+    
+    // update methodu içerisinde kullanarak lerp içinde Time.delta time kullanmazsan donma olmuyor.
 
-    private void Update()
+    private void FixedUpdate()
     {
         SetFormation();
     }
+    
 
     private void SetFormation() {
         _points = Formation.EvaluatePoints().ToList();
@@ -65,14 +68,14 @@ public class UnitController : MonoBehaviour
             {
                 SpawnedUnits[i].transform.position = new Vector3(
                     Mathf.Lerp(SpawnedUnits[i].transform.position.x, transform.position.x + i * 0.5f,
-                        Time.deltaTime * snakeMoveSpeed),
+                        snakeMoveSpeed * Time.deltaTime),
                     SpawnedUnits[i].transform.position.y, SpawnedUnits[i].transform.position.z);
             }
             else
             {
                 SpawnedUnits[i].transform.position = new Vector3(
                     Mathf.Lerp(SpawnedUnits[i].transform.position.x, SpawnedUnits[i - 3].transform.position.x,
-                        Time.deltaTime * snakeMoveSpeed),
+                        snakeMoveSpeed * Time.deltaTime),
                     SpawnedUnits[i].transform.position.y, SpawnedUnits[i].transform.position.z);
             }
         }
@@ -101,7 +104,6 @@ public class UnitController : MonoBehaviour
         var posY = 1;
         var cameraFollower = GameManager.Instance.mainCam.GetComponent<CameraFollower>();
         snakeMoveSpeed = 100f;
-        cameraFollower.onEndGame = true;
         cameraFollower.SetFinishCameraPos(1f);
         crowdNumberImg.gameObject.SetActive(false);
 

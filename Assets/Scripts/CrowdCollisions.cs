@@ -33,22 +33,23 @@ public class CrowdCollisions : MonoBehaviour
         
         if (otherGo.CompareTag("Collectible"))
         {
-            switch (otherGo.GetComponent<Collectible>().operationState)
+            var mathOperation = otherGo.GetComponent<MathOperations>();
+            switch (otherGo.GetComponent<MathOperations>().operationState)
             {
                 case OperationState.Addition:
-                    FormationController.Instance.numberOfUnit += otherGo.GetComponent<Collectible>().number;
+                    FormationController.Instance.numberOfUnit += mathOperation.number;
                     Destroy(otherGo);
                     break;
                 case OperationState.Substraction:
-                    FormationController.Instance.numberOfUnit -= otherGo.GetComponent<Collectible>().number;
+                    FormationController.Instance.numberOfUnit -= mathOperation.number;
                     Destroy(otherGo);
                     break;
                 case OperationState.Multiplication:
-                    FormationController.Instance.numberOfUnit *= otherGo.GetComponent<Collectible>().number;
+                    FormationController.Instance.numberOfUnit *= mathOperation.number;
                     Destroy(otherGo);
                     break;
                 case OperationState.Division:
-                    FormationController.Instance.numberOfUnit /= otherGo.GetComponent<Collectible>().number;
+                    FormationController.Instance.numberOfUnit /= mathOperation.number;
                     Destroy(otherGo);
                     break;
                 default:

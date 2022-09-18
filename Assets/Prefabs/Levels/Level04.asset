@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bfd90946baed624ab265fd744433552, type: 3}
-  m_Name: TESTLEVEL
+  m_Name: Level04
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 2950972434276801911, guid: cc4ed9dcd25ef3e45921e28ee0256248, type: 3}
-  levelIndex: 5
+  levelPrefab: {fileID: 2950972434276801911, guid: ba18b12de3d3e0d4ab4782cc2df2eda7, type: 3}
+  levelIndex: 3
