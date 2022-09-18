@@ -8,7 +8,6 @@ public class CameraFollower : MonoBehaviour
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private Vector3 offset;
     private Vector3 _defaultOffset, _defaultRotation;
-    public bool isFollow;
 
 
     private void Awake()
@@ -19,7 +18,6 @@ public class CameraFollower : MonoBehaviour
 
     private void LateUpdate()
     {
-        //if (!isFollow) return;
         var camPos = transform.position;
         var desiredPos = target.position + offset;
         transform.position = Vector3.SmoothDamp(camPos, desiredPos, ref velocity, smoothTime);
