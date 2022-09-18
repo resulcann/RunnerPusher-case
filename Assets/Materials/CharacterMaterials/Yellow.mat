@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 0d325ef349acc794da37e3dd556b7a99, type: 3}
   m_ValidKeywords:
   - TCP2_NONE
+  - TCP2_OUTLINE_TEXTURED
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -65,7 +66,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendOutline: 0
     - _EnableConstSizeOutline: 0
-    - _EnableTexturedOutline: 0
+    - _EnableTexturedOutline: 1
     - _EnableZSmooth: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -75,7 +76,7 @@ Material:
     - _OcclusionStrength: 1
     - _Offset1: 0
     - _Offset2: 0
-    - _Outline: 1
+    - _Outline: 5
     - _Parallax: 0.02
     - _RampSmooth: 0.75
     - _RampSmoothAdd: 0.75
