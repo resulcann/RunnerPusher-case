@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FormationController : MonoBehaviour
 {
-    [SerializeField] protected float spread = 1;
+    [SerializeField] private float spread = 1;
     public static FormationController Instance { get; private set; }
     public int numberOfUnit = 1;
     public int unitWidth = 3;
