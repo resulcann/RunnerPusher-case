@@ -410,7 +410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &152133433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1093,7 +1093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &827480197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1445,7 +1445,6 @@ MonoBehaviour:
   smoothTime: 0.25
   velocity: {x: 0, y: 0, z: 0}
   offset: {x: 0.5, y: 8, z: -7.5}
-  isFollow: 0
 --- !u!82 &963194230
 AudioSource:
   m_ObjectHideFlags: 0

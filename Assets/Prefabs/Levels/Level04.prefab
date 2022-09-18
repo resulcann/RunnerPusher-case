@@ -1456,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5120b3909c9a944dac0da58924d6b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragMultiplier: 5
+  dragMultiplier: 10
   bounds: {x: -2, y: 2}
 --- !u!114 &2950972434485604649
 MonoBehaviour:
